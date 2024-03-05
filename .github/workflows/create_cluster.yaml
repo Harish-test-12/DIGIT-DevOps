@@ -411,7 +411,6 @@ jobs:
   #         AWS_REGION:  ${{ secrets.AWS_REGION }}  
                    
   terraform_infra_destruction:
-    if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.destroyCommand == 'destroy' }}
     runs-on: ubuntu-latest
     env:
       TF_IN_AUTOMATION: "true"
