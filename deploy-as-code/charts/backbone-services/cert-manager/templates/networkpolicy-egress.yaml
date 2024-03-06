@@ -3,7 +3,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: {{ template "webhook.fullname" . }}-allow-egress
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Release.Namespace }}
 spec:
   egress:
     {{- with .Values.webhook.networkPolicy.egress }}

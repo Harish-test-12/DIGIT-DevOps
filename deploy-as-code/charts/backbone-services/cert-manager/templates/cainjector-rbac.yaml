@@ -46,7 +46,7 @@ roleRef:
   name: {{ template "cainjector.fullname" . }}
 subjects:
   - name: {{ template "cainjector.serviceAccountName" . }}
-    namespace: {{ .Values.namespace }}
+    namespace: {{ .Release.Namespace }}
     kind: ServiceAccount
 
 ---
@@ -98,6 +98,6 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: {{ template "cainjector.serviceAccountName" . }}
-    namespace: {{ .Values.namespace }}
+    namespace: {{ .Release.Namespace }}
 {{- end }}
 {{- end }}
